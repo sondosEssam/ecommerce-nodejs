@@ -28,13 +28,13 @@ export const categorySchema = new Schema({
     },
     CreatedBy:{
         type:mongoose.Schema.ObjectId,
-        ref:"User",
+        ref:"user",
         required:false
     },
-    custom_id:{
-        type:String,
-        required:true
-    },
+    // customID:{
+    //     type:String,
+    //     required:true
+    // },
 },
 {
     timestamps:true

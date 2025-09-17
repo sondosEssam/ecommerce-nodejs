@@ -36,7 +36,7 @@ export const subCategorySchema = new Schema({
         ref:"category",
         required:true
     },
-    // customID:{
+    // customId:{
     //     type:String,
     //     required:true
     // },

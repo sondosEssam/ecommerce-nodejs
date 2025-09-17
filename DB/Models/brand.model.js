@@ -31,10 +31,7 @@ export const brandSchema = new Schema({
         ref:"user",
         required:false
     }
-    // customID:{
-    //     type:String,
-    //     required:true
-    // },
+
 },
 {
     timestamps:true

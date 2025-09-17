@@ -11,7 +11,7 @@ export const categorySchema = new Schema({
     },
     slug:{
         type:String,
-        required:true,
+        required:false,
         Unique:true,
         lowercase:true
     },
@@ -31,13 +31,20 @@ export const categorySchema = new Schema({
         ref:"user",
         required:false
     },
-    // customID:{
+    // customId:{
     //     type:String,
     //     required:true
     // },
 },
 {
+    toObject:{virtuals:true},
+    toJSON:{virtuals:true},
     timestamps:true
 }
 )
+categorySchema.virtual("subCategoryID",{
+    ref:"subCategory",
+    localField:'_id',
+    foreignField:'categoryID'
+})
 export const categoryModel = mongoose.model('category',categorySchema);

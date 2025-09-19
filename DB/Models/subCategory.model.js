@@ -36,13 +36,16 @@ export const subCategorySchema = new Schema({
         ref:"category",
         required:true
     },
-    // customId:{
-    //     type:String,
-    //     required:true
-    // },
 },
 {
+    toObject:{virtuals:true},
+    toJSON:{virtuals:true},
     timestamps:true
 }
 )
+subCategorySchema.virtual("brandID",{
+    ref:"brand",
+    localField:'_id',
+    foreignField:'subCategoryID'
+})
 export const subCategoryModel = mongoose.model('subCategory',subCategorySchema);

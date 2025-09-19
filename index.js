@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json())
 app.use('/category', router.categoryRouter);
 app.use('/subcategory', router.subCategoryRouter);
-
+app.use('/brand', router.brandRouter);
 
 //error
 app.use((err,req,res,next)=>{

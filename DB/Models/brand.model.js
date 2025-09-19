@@ -30,6 +30,11 @@ export const brandSchema = new Schema({
         type:mongoose.Schema.ObjectId,
         ref:"user",
         required:false
+    },
+    subCategoryID:{
+        type:mongoose.Schema.ObjectId,
+        ref:"subCategory",
+        required:true
     }
 
 },
